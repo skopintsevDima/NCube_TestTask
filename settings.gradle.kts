@@ -1,2 +1,2 @@
-rootProject.name = "CEX.IO Test"
+rootProject.name = "NCube Test"
 include(":app")
