@@ -3,7 +3,6 @@ plugins {
     kotlin("android")
     kotlin("android.extensions")
     kotlin("kapt")
-    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -16,17 +15,18 @@ android {
         targetSdkVersion(Config.Android.targetSdkVersion)
         versionCode = Config.Android.versionCode
         versionName = Config.Android.versionName
-
-        testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
     }
-
-    dataBinding.isEnabled = true
 
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
             proguardFiles("proguard-rules.pro")
         }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 
     sourceSets {
@@ -36,23 +36,25 @@ android {
 
 dependencies {
     implementation(Config.Tools.kotlinStd)
-    implementation(Config.Tools.ktxCore)
+    implementation(Config.Tools.kotlinCoroutinesCore)
+    implementation(Config.Tools.kotlinCoroutinesAndroid)
 
+    implementation(Config.Android.ktxCore)
     implementation(Config.Android.appcompat)
     implementation(Config.Android.constraintLayout)
-    implementation(Config.Android.navigationFragment)
-    implementation(Config.Android.navigationUi)
-    implementation(Config.Android.legacySupport)
-    implementation(Config.Android.viewModel)
+    implementation(Config.Android.swipeRefreshLayout)
     implementation(Config.Android.material)
+    implementation(Config.Android.viewModel)
+    implementation(Config.Android.paging)
+    implementation(Config.Android.room)
+    implementation(Config.Android.roomKtx)
+    kapt(Config.Android.roomCompiler)
 
-    implementation(Config.ThirdPartyLibs.picasso)
-    implementation(Config.ThirdPartyLibs.okhttp)
     implementation(Config.ThirdPartyLibs.retrofit)
-    implementation(Config.ThirdPartyLibs.koinCore)
-
-    testImplementation(Config.TestingLibs.junit)
-    testImplementation(Config.TestingLibs.androidxJunit)
-
-    androidTestImplementation(Config.TestingLibs.espressoCore)
+    implementation(Config.ThirdPartyLibs.retrofitGson)
+    implementation(Config.ThirdPartyLibs.httpLoggingInterceptor)
+    implementation(Config.ThirdPartyLibs.gson)
+    implementation(Config.ThirdPartyLibs.picasso)
+    implementation(Config.ThirdPartyLibs.dagger)
+    kapt(Config.ThirdPartyLibs.daggerCompiler)
 }

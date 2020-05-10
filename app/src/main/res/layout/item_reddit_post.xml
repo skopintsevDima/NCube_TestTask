@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item_post_height"
+    android:background="@color/colorAccent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/scoreView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Score: 25000"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_big"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="@dimen/item_score_margin"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/authorView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Posted by author"
+        android:textColor="@android:color/white"
+        android:textStyle="italic"
+        android:textSize="@dimen/text_medium"
+        app:layout_constraintTop_toBottomOf="@id/scoreView"
+        app:layout_constraintStart_toStartOf="@id/scoreView"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/subredditView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="r/all"
+        android:textColor="@android:color/white"
+        android:textStyle="italic"
+        android:textSize="@dimen/text_medium"
+        app:layout_constraintTop_toBottomOf="@id/authorView"
+        app:layout_constraintStart_toStartOf="@id/authorView"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/thumbView"
+        android:layout_width="@dimen/item_thumb_size"
+        android:layout_height="@dimen/item_thumb_size"
+        app:layout_constraintTop_toBottomOf="@id/subredditView"
+        app:layout_constraintBottom_toTopOf="@id/createdView"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titleView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:text="Title"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_normal"
+        android:ellipsize="end"
+        app:layout_constraintTop_toBottomOf="@id/subredditView"
+        app:layout_constraintBottom_toTopOf="@id/createdView"
+        app:layout_constraintStart_toStartOf="@id/subredditView"
+        app:layout_constraintEnd_toStartOf="@id/thumbView"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/createdView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="02:45"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_big"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="@dimen/item_created_margin"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
