@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.test.ncubetest.presentation.main.MainActivity">
+        <activity android:name="com.test.ncubetest.presentation.main.MainActivity"
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
