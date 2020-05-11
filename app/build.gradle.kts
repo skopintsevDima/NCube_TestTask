@@ -29,6 +29,10 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
     sourceSets {
         getByName("main").java.srcDirs("src/main/kotlin")
     }
@@ -45,6 +49,7 @@ dependencies {
     implementation(Config.Android.swipeRefreshLayout)
     implementation(Config.Android.material)
     implementation(Config.Android.viewModel)
+    implementation(Config.Android.liveData)
     implementation(Config.Android.paging)
     implementation(Config.Android.room)
     implementation(Config.Android.roomKtx)

@@ -12,6 +12,7 @@ object Config {
         const val constraintLayoutVersion = "1.1.3"
         const val swipeRefreshLayoutVersion = "1.0.0"
         const val viewModelVersion = "2.2.0"
+        const val liveDataVersion = "2.2.0"
         const val roomVersion = "2.2.5"
         const val pagingVersion = "2.1.2"
 
@@ -33,7 +34,7 @@ object Config {
 
     object Android {
         const val buildToolsVersion = "29.0.2"
-        const val minSdkVersion = 19
+        const val minSdkVersion = 21
         const val targetSdkVersion = 29
         const val compileSdkVersion = 29
         const val applicationId = "com.test.ncubetest"
@@ -46,6 +47,7 @@ object Config {
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayoutVersion}"
         const val swipeRefreshLayout = "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swipeRefreshLayoutVersion}"
         const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModelVersion}"
+        const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.liveDataVersion}"
         const val room = "androidx.room:room-runtime:${Versions.roomVersion}"
         const val roomKtx = "androidx.room:room-ktx:${Versions.roomVersion}"
         const val roomCompiler = "androidx.room:room-compiler:${Versions.roomVersion}"

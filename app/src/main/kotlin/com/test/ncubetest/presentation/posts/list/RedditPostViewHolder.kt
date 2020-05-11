@@ -15,6 +15,7 @@ class RedditPostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val authorView = itemView.findViewById<AppCompatTextView>(R.id.authorView)
     private val subredditView = itemView.findViewById<AppCompatTextView>(R.id.subredditView)
     private val thumbView = itemView.findViewById<AppCompatImageView>(R.id.thumbView)
+    // TODO: Make this view scrollable
     private val titleView = itemView.findViewById<AppCompatTextView>(R.id.titleView)
     private val createdView = itemView.findViewById<AppCompatTextView>(R.id.createdView)
 

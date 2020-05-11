@@ -1,28 +1,23 @@
 package com.test.ncubetest.presentation.posts
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.paging.PagedList
-import com.test.ncubetest.domain.posts.model.RedditPost
 import com.test.ncubetest.domain.posts.usecase.posts.GetPostsUseCase
-import com.test.ncubetest.domain.posts.usecase.posts.GetPostsCallback
-import com.test.ncubetest.util.network.ConnectivityChecker
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class PostsViewModel @Inject constructor(
-    private val getPostsUseCase: GetPostsUseCase,
-    private val connectivityChecker: ConnectivityChecker
+    getPostsUseCase: GetPostsUseCase
 ): ViewModel() {
-    fun loadPosts(
-        getPostsCallback: GetPostsCallback,
-        refresh: Boolean
-    ): LiveData<PagedList<RedditPost>> = getPostsUseCase.invoke(
-        viewModelScope,
-        getPostsCallback,
-        refresh
-    )
+    private val postsResult = getPostsUseCase.invoke(viewModelScope)
+    val posts = postsResult.pagedList
+    val networkState = postsResult.networkState
+    val refreshState = postsResult.refreshState
 
-    fun getNetworkState(): LiveData<Boolean> = connectivityChecker.getConnectionState()
+    fun refresh() {
+        postsResult.refresh.invoke()
+    }
+
+    fun retry(lastItemName: String?) {
+        postsResult.retry.invoke(lastItemName)
+    }
 }

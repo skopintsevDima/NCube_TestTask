@@ -5,4 +5,5 @@
     <string name="author">Posted by %1$s</string>
 
     <string name="error_loading_posts">Loading posts failed. Try again.</string>
+    <string name="retry">Retry</string>
 </resources>

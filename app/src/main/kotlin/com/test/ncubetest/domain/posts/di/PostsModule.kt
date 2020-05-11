@@ -7,10 +7,8 @@ import com.test.ncubetest.di.fragment.FragmentScope
 import com.test.ncubetest.domain.posts.repository.PostsRepository
 import com.test.ncubetest.domain.posts.usecase.posts.GetPostsUseCase
 import com.test.ncubetest.domain.posts.usecase.posts.GetPostsUseCaseImpl
-import com.test.ncubetest.util.network.ConnectivityChecker
 import dagger.Module
 import dagger.Provides
-import java.util.concurrent.Executor
 import javax.inject.Inject
 
 @Module
@@ -27,11 +25,9 @@ class PostsModule {
     @Inject
     fun providePostsRepository(
         redditApi: RedditApi,
-        postsDao: PostsDao,
-        connectivityChecker: ConnectivityChecker
+        postsDao: PostsDao
     ): PostsRepository = PostsRepositoryImpl(
         redditApi,
-        postsDao,
-        connectivityChecker
+        postsDao
     )
 }
