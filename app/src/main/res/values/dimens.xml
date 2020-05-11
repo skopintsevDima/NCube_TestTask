@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="item_post_height">300dp</dimen>
+    <dimen name="item_post_height">250dp</dimen>
     <dimen name="item_score_margin">8dp</dimen>
     <dimen name="item_created_margin">8dp</dimen>
     <dimen name="item_thumb_size">140dp</dimen>
+    <dimen name="item_title_padding_bottom">16dp</dimen>
     <dimen name="retry_layout_padding_bottom">16dp</dimen>
 
     <dimen name="text_big">20sp</dimen>
