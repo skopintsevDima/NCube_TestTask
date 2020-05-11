@@ -9,7 +9,7 @@ interface PostsDao {
     @Query("SELECT * FROM posts")
     fun getAllPosts() : DataSource.Factory<Int, RedditPost>
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(redditPosts: List<RedditPost>): List<Long>
 
     @Query("DELETE FROM posts")
